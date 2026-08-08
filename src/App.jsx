@@ -13,7 +13,7 @@ import "./styles/utilities.css";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/chintu_and_bubu/">
       <Header />
       <main>
         <Routes>

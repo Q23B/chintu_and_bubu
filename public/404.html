@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redirecting…</title>
+</head>
+
+<body>
+    <p>Redirecting…</p>
+    <script>
+        const base = "/chintu_and_bubu/";
+        const indexPath = base + "index.html";
+
+        fetch(indexPath)
+            .then((response) => response.text())
+            .then((html) => {
+                document.open();
+                document.write(html);
+                document.close();
+            })
+            .catch(() => {
+                document.body.innerText =
+                    "Unable to load the site. Please return to the homepage.";
+            });
+    </script>
+</body>
+
+</html>

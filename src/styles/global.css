@@ -1,0 +1,129 @@
+:root {
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  font-size: 16px;
+  color: var(--color-black);
+  background-color: #ffffff;
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+  font-synthesis: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: #ffffff;
+  color: var(--color-black);
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--color-blue);
+  outline-offset: 3px;
+}
+
+.page-container {
+  width: min(100%, var(--container-max-width));
+  max-width: var(--container-max-width);
+  padding-inline: var(--container-padding);
+  margin-inline: auto;
+}
+
+.page-section {
+  padding-block: var(--space-xl);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  padding: 0.95rem 1.3rem;
+  cursor: pointer;
+  transition:
+    box-shadow var(--transition-default),
+    transform var(--transition-default),
+    border-color var(--transition-default),
+    background-color var(--transition-default);
+}
+
+.button--primary {
+  color: #ffffff;
+  background-color: var(--color-blue);
+}
+
+.button--secondary {
+  color: var(--color-black);
+  background-color: var(--color-light-gray);
+  border-color: var(--color-light-gray);
+}
+
+.card {
+  background-color: #ffffff;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+}
+
+@media (max-width: 900px) {
+  :root {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 650px) {
+  :root {
+    font-size: 14px;
+  }
+}

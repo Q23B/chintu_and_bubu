@@ -1,0 +1,29 @@
+:root {
+  --color-light-gray: #e0e0e0;
+  --color-blue: #2060a0;
+  --color-dark-pink: #e04060;
+  --color-dark-red: #200000;
+  --color-pink: #e06080;
+  --color-coral: #e06060;
+  --color-black: #000000;
+  --color-gold: #e0c080;
+
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+
+  --container-max-width: 1200px;
+  --container-padding: clamp(16px, 4vw, 24px);
+
+  --space-xs: 8px;
+  --space-sm: 12px;
+  --space-md: 20px;
+  --space-lg: 32px;
+  --space-xl: 48px;
+
+  --shadow-default: 0 18px 48px rgba(0, 0, 0, 0.08);
+  --shadow-soft: 0 10px 24px rgba(0, 0, 0, 0.08);
+
+  --transition-fast: 180ms ease;
+  --transition-default: 280ms ease;
+}

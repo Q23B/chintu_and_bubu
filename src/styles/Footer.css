@@ -1,0 +1,139 @@
+.site-footer {
+  background: #200000;
+  color: #ffffff;
+  padding-block: 48px;
+  padding-bottom: calc(48px + env(safe-area-inset-bottom, 0px));
+}
+
+.site-footer__content {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.footer-info {
+  display: grid;
+  gap: 16px;
+}
+
+.footer-brand {
+  font-size: 1.28rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.footer-tagline {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--color-gold);
+  font-size: 0.82rem;
+}
+
+.footer-description {
+  max-width: 520px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.84);
+}
+
+.footer-links-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px;
+}
+
+.footer-links-block {
+  display: grid;
+  gap: 12px;
+}
+
+.footer-headline {
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #e0e0e0;
+}
+
+.footer-link {
+  color: rgba(224, 224, 224, 0.92);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  transition: color var(--transition-fast);
+}
+
+.footer-link:hover,
+.footer-link:focus-visible {
+  color: #ffffff;
+}
+
+.footer-bottom {
+  margin-top: 40px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(224, 192, 128, 0.18);
+}
+
+.footer-bottom__divider {
+  display: none;
+}
+
+.footer-bottom__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  font-size: 0.92rem;
+  color: rgba(224, 224, 224, 0.88);
+}
+
+.footer-official {
+  color: var(--color-gold);
+  font-weight: 600;
+}
+
+.footer-info::after {
+  content: "\2728";
+  color: #e04060;
+  font-size: 1rem;
+  opacity: 0.18;
+  margin-top: 12px;
+}
+
+@media (max-width: 1024px) {
+  .site-footer__content {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-links-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .site-footer {
+    padding-block: 36px;
+  }
+
+  .footer-links-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-bottom {
+    padding-top: 24px;
+  }
+
+  .footer-bottom__meta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 500px) {
+  .site-footer__content {
+    gap: 24px;
+  }
+
+  .footer-description {
+    max-width: 100%;
+  }
+}

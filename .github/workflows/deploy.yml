@@ -37,7 +37,7 @@ jobs:
       - name: Upload artifact for GitHub Pages
         uses: actions/upload-pages-artifact@v4
         with:
-          path: ./dist
+          path: dist
 
   deploy:
     needs: build
@@ -51,4 +51,5 @@ jobs:
         uses: actions/deploy-pages@v4
 
       - name: Output deployment URL
-        run: echo "GitHub Pages URL: ${{ steps.deployment.outputs.page_url }}"
+        run: |
+          echo "GitHub Pages URL: ${{ steps.deployment.outputs.page_url }}"

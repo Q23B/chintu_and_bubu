@@ -1,4 +1,6 @@
 import { useNavigate } from "react-router-dom";
+import aboutHero from "../assets/about/about-hero.webp";
+import aboutIdentity from "../assets/about/about-identity.webp";
 import "../styles/About.css";
 
 const worldCards = [
@@ -63,14 +65,13 @@ function About() {
             </p>
           </div>
 
-          <div
-            className="about-hero__visual"
-            aria-hidden="true"
-            data-asset-path="src/assets/about/about-hero.webp"
-          >
-            <div className="about-hero__placeholder">
-              <span>Reserved artwork area</span>
-            </div>
+          <div className="about-hero__visual" aria-hidden="true">
+            <img
+              src={aboutHero}
+              alt=""
+              className="about-hero__image"
+              loading="eager"
+            />
           </div>
         </div>
       </section>
@@ -167,14 +168,13 @@ function About() {
             </p>
           </div>
 
-          <div
-            className="about-identity__visual"
-            aria-hidden="true"
-            data-asset-path="src/assets/about/about-identity.webp"
-          >
-            <div className="about-identity__placeholder">
-              <span>Reserved identity artwork</span>
-            </div>
+          <div className="about-identity__visual" aria-hidden="true">
+            <img
+              src={aboutIdentity}
+              alt=""
+              className="about-identity__image"
+              loading="eager"
+            />
           </div>
         </div>
       </section>

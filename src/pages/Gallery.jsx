@@ -1,4 +1,14 @@
 import { useNavigate } from "react-router-dom";
+import galleryHero from "../assets/gallery/gallery-hero.webp";
+import galleryFeatured from "../assets/gallery/gallery-featured.webp";
+import gallery01 from "../assets/gallery/gallery-01.webp";
+import gallery02 from "../assets/gallery/gallery-02.webp";
+import gallery03 from "../assets/gallery/gallery-03.webp";
+import gallery04 from "../assets/gallery/gallery-04.webp";
+import gallery05 from "../assets/gallery/gallery-05.webp";
+import gallery06 from "../assets/gallery/gallery-06.webp";
+import chintuGallery from "../assets/gallery/chintu-gallery.webp";
+import bubuGallery from "../assets/gallery/bubu-gallery.webp";
 import "../styles/Gallery.css";
 
 const galleryCards = [
@@ -6,37 +16,37 @@ const galleryCards = [
     id: "01",
     title: "Little Reactions",
     label: "CHARACTER",
-    asset: "src/assets/gallery/gallery-01.webp",
+    asset: gallery01,
   },
   {
     id: "02",
     title: "Everyday Adventures",
     label: "EVERYDAY",
-    asset: "src/assets/gallery/gallery-02.webp",
+    asset: gallery02,
   },
   {
     id: "03",
     title: "Playful Moments",
     label: "PLAY",
-    asset: "src/assets/gallery/gallery-03.webp",
+    asset: gallery03,
   },
   {
     id: "04",
     title: "Quiet Togetherness",
     label: "TOGETHER",
-    asset: "src/assets/gallery/gallery-04.webp",
+    asset: gallery04,
   },
   {
     id: "05",
     title: "Big Feelings",
     label: "EMOTION",
-    asset: "src/assets/gallery/gallery-05.webp",
+    asset: gallery05,
   },
   {
     id: "06",
     title: "Just Chintu & Bubu",
     label: "STORY",
-    asset: "src/assets/gallery/gallery-06.webp",
+    asset: gallery06,
   },
 ];
 
@@ -44,13 +54,13 @@ const characterMoments = [
   {
     title: "CHINTU",
     label: "THE EXPRESSIVE ONE",
-    asset: "src/assets/gallery/chintu-gallery.webp",
+    asset: chintuGallery,
     alt: "Chintu expressive character artwork",
   },
   {
     title: "BUBU",
     label: "THE CALM ONE",
-    asset: "src/assets/gallery/bubu-gallery.webp",
+    asset: bubuGallery,
     alt: "Bubu calm character artwork",
   },
 ];
@@ -77,14 +87,13 @@ function Gallery() {
               characters, everyday moments and little stories brought to life.
             </p>
           </div>
-          <div
-            className="gallery-hero__visual"
-            aria-hidden="true"
-            data-asset-path="src/assets/gallery/gallery-hero.webp"
-          >
-            <div className="gallery-placeholder">
-              <span>Reserved hero artwork</span>
-            </div>
+          <div className="gallery-hero__visual" aria-hidden="true">
+            <img
+              src={galleryHero}
+              alt=""
+              className="gallery-hero__image"
+              loading="eager"
+            />
           </div>
         </div>
       </section>
@@ -94,14 +103,13 @@ function Gallery() {
         aria-labelledby="gallery-featured-title"
       >
         <div className="page-container gallery-featured__grid">
-          <div
-            className="gallery-featured__visual"
-            aria-hidden="true"
-            data-asset-path="src/assets/gallery/gallery-featured.webp"
-          >
-            <div className="gallery-placeholder gallery-placeholder--large">
-              <span>Reserved featured artwork</span>
-            </div>
+          <div className="gallery-featured__visual" aria-hidden="true">
+            <img
+              src={galleryFeatured}
+              alt=""
+              className="gallery-featured__image"
+              loading="eager"
+            />
           </div>
           <div className="gallery-featured__content">
             <span className="gallery-eyebrow">FEATURED MOMENT</span>
@@ -132,14 +140,13 @@ function Gallery() {
           <div className="gallery-collection__grid">
             {galleryCards.map((card) => (
               <article key={card.id} className="gallery-card">
-                <div
-                  className="gallery-card__image"
-                  aria-hidden="true"
-                  data-asset-path={card.asset}
-                >
-                  <div className="gallery-placeholder gallery-placeholder--square">
-                    <span>{card.title}</span>
-                  </div>
+                <div className="gallery-card__image" aria-hidden="true">
+                  <img
+                    src={card.asset}
+                    alt=""
+                    className="gallery-card__image-element"
+                    loading="lazy"
+                  />
                 </div>
                 <div className="gallery-card__content">
                   <span className="gallery-card__label">{card.label}</span>
@@ -174,14 +181,13 @@ function Gallery() {
           <div className="gallery-moments__cards">
             {characterMoments.map((item) => (
               <article key={item.title} className="gallery-moments__card">
-                <div
-                  className="gallery-moments__visual"
-                  aria-hidden="true"
-                  data-asset-path={item.asset}
-                >
-                  <div className="gallery-placeholder gallery-placeholder--tall">
-                    <span>{item.label}</span>
-                  </div>
+                <div className="gallery-moments__visual" aria-hidden="true">
+                  <img
+                    src={item.asset}
+                    alt={item.alt}
+                    className="gallery-moments__image"
+                    loading="lazy"
+                  />
                 </div>
                 <div className="gallery-moments__meta">
                   <p className="gallery-moments__label">{item.label}</p>

@@ -1,4 +1,5 @@
 import "../../styles/Home.css";
+import heroImage from "../../assets/characters/characters-hero.webp";
 
 function Hero() {
   return (
@@ -39,11 +40,13 @@ function Hero() {
           </p>
         </div>
 
-        <div className="home-hero__visual" aria-hidden="true">
+        <div className="home-hero__visual">
           <div className="hero-visual-frame">
-            <div className="hero-visual-placeholder">
-              Chintu & Bubu hero art placeholder
-            </div>
+            <img
+              src={heroImage}
+              alt="Chintu & Bubu official characters"
+              className="character-showcase__image"
+            />
           </div>
 
           <span className="hero-decor hero-decor--pink" />

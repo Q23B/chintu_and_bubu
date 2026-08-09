@@ -1,4 +1,7 @@
 import { useNavigate } from "react-router-dom";
+import charactersHero from "../assets/characters/characters-hero.webp";
+import chintuProfile from "../assets/characters/chintu-profile.webp";
+import bubuProfile from "../assets/characters/bubu-profile.webp";
 import "../styles/Characters.css";
 
 const worldCards = [
@@ -60,14 +63,13 @@ function Characters() {
               interactions turn little moments into memorable stories.
             </p>
           </div>
-          <div
-            className="characters-hero__visual"
-            aria-hidden="true"
-            data-asset-path="src/assets/characters/characters-hero.webp"
-          >
-            <div className="characters-placeholder">
-              <span>Reserved hero artwork</span>
-            </div>
+          <div className="characters-hero__visual" aria-hidden="true">
+            <img
+              src={charactersHero}
+              alt=""
+              className="characters-hero__image"
+              loading="eager"
+            />
           </div>
         </div>
       </section>
@@ -77,14 +79,13 @@ function Characters() {
         aria-labelledby="chintu-profile-title"
       >
         <div className="page-container character-profile__grid">
-          <div
-            className="character-profile__visual"
-            aria-hidden="true"
-            data-asset-path="src/assets/characters/chintu-profile.webp"
-          >
-            <div className="characters-placeholder characters-placeholder--tall">
-              <span>Reserved Chintu artwork</span>
-            </div>
+          <div className="character-profile__visual" aria-hidden="true">
+            <img
+              src={chintuProfile}
+              alt=""
+              className="character-profile__image"
+              loading="eager"
+            />
           </div>
 
           <div className="character-profile__content">
@@ -144,14 +145,13 @@ function Characters() {
             </p>
           </div>
 
-          <div
-            className="character-profile__visual"
-            aria-hidden="true"
-            data-asset-path="src/assets/characters/bubu-profile.webp"
-          >
-            <div className="characters-placeholder characters-placeholder--tall">
-              <span>Reserved Bubu artwork</span>
-            </div>
+          <div className="character-profile__visual" aria-hidden="true">
+            <img
+              src={bubuProfile}
+              alt=""
+              className="character-profile__image"
+              loading="eager"
+            />
           </div>
         </div>
       </section>

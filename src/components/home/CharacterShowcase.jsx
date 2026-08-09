@@ -1,4 +1,6 @@
 import "../../styles/CharacterShowcase.css";
+import chintuCharacter from "../../assets/characters/chintu-character.webp";
+import bubuCharacter from "../../assets/characters/bubu-character.webp";
 
 const characters = [
   {
@@ -9,9 +11,8 @@ const characters = [
       "Chintu turns the smallest moments into the biggest reactions — with curiosity, charm and just the right amount of drama.",
     personality: ["Dramatic", "Playful", "Expressive", "Mischievous"],
     accent: "pink",
-    image: null,
+    image: chintuCharacter,
     alt: "Chintu — official character artwork",
-    reservedPath: "src/assets/characters/chintu-character.webp",
   },
   {
     id: "bubu",
@@ -21,9 +22,8 @@ const characters = [
       "Bubu brings calm to the chaos — thoughtful, caring and always there when Chintu needs him.",
     personality: ["Calm", "Caring", "Patient", "Funny"],
     accent: "blue",
-    image: null,
+    image: bubuCharacter,
     alt: "Bubu — official character artwork",
-    reservedPath: "src/assets/characters/bubu-character.webp",
   },
 ];
 

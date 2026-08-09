@@ -1,4 +1,6 @@
 import { useNavigate } from "react-router-dom";
+import collaborationsHero from "../assets/collaborations/collaborations-hero.webp";
+import collaborationsHighlight from "../assets/collaborations/collaborations-highlight.webp";
 import {
   collaborationTypes,
   featuredPartners,
@@ -47,14 +49,13 @@ function Collaborations() {
             </div>
           </div>
 
-          <div
-            className="collaborations-hero__visual"
-            aria-hidden="true"
-            data-asset-path="src/assets/collaborations/collaborations-hero.webp"
-          >
-            <div className="collaborations-placeholder">
-              <span>Reserved collaboration artwork</span>
-            </div>
+          <div className="collaborations-hero__visual" aria-hidden="true">
+            <img
+              src={collaborationsHero}
+              alt=""
+              className="collaborations-hero__image"
+              loading="eager"
+            />
           </div>
         </div>
       </section>
@@ -166,14 +167,13 @@ function Collaborations() {
 
       <section className="collaborations-visual page-section">
         <div className="page-container collaborations-visual__panel">
-          <div
-            className="collaborations-visual__image"
-            aria-hidden="true"
-            data-asset-path="src/assets/collaborations/collaborations-highlight.webp"
-          >
-            <div className="collaborations-placeholder collaborations-placeholder--large">
-              <span>Reserved collaboration highlight</span>
-            </div>
+          <div className="collaborations-visual__image" aria-hidden="true">
+            <img
+              src={collaborationsHighlight}
+              alt=""
+              className="collaborations-visual__image-element"
+              loading="eager"
+            />
           </div>
           <div className="collaborations-visual__content">
             <span className="collaborations-eyebrow">VISUAL HIGHLIGHT</span>

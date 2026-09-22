@@ -63,14 +63,14 @@ function About() {
           <div className="about-hero__copy">
             <span className="about-eyebrow">ABOUT CHINTU &amp; BUBU</span>
             <h1 id="about-hero-title">
-              Little Moments.
+              Two characters.
               <br />
-              Big Emotions.
+              One very real story.
             </h1>
             <p>
-              Chintu &amp; Bubu is an original character world built around the
-              little moments, emotions and everyday stories that make life feel
-              special.
+              Chintu &amp; Bubu began as a way to tell everyday stories without
+              making the people behind them the story. The characters carry the
+              feeling. The moments stay real.
             </p>
           </div>
 
@@ -94,16 +94,18 @@ function About() {
           <span className="about-eyebrow">THE IDEA</span>
           <div className="about-idea__copy">
             <h2 id="about-idea-title">
-              Ordinary moments can become unforgettable.
+              We didn&apos;t want to be on camera.
+              <br />
+              So we created two characters.
             </h2>
             <p>
-              At the heart of Chintu &amp; Bubu is a simple idea: the smallest
-              moments can carry the biggest emotions.
+              The idea was simple: tell honest, everyday stories without turning
+              the people behind them into the story itself.
             </p>
             <p>
-              From playful chaos and teasing to quiet understanding and shared
-              laughter, their world celebrates the warmth found in simply being
-              together.
+              Chintu and Bubu became a way to hold onto those little moments —
+              the reactions, the confusion, the affection, the humour that feels
+              familiar because it is.
             </p>
           </div>
         </div>
@@ -144,13 +146,13 @@ function About() {
           <div className="about-storytelling__content">
             <span className="about-eyebrow">CHARACTER-LED STORYTELLING</span>
             <h2 id="about-storytelling-title">
-              Two personalities. One unforgettable world.
+              One is expressive. The other usually handles the aftermath.
             </h2>
             <p>
-              Chintu &amp; Bubu are designed around distinct personalities,
-              expressive emotions and relatable everyday interactions. Their
-              stories are driven by character, connection and the small details
-              that make a moment feel real.
+              Chintu and Bubu are built around distinct personalities, familiar
+              reactions and the kind of everyday situations that feel instantly
+              recognizable. Their stories live in the small details — the pause,
+              the look, the misunderstanding, the tiny moment of care.
             </p>
           </div>
 
@@ -172,12 +174,12 @@ function About() {
       >
         <div className="page-container about-identity__grid">
           <div className="about-identity__copy">
-            <h2 id="about-identity-title">Recognizable by design.</h2>
+            <h2 id="about-identity-title">Recognizable by feeling.</h2>
             <p>
-              From expressive faces and distinctive personalities to carefully
-              crafted visual details, Chintu &amp; Bubu are built to feel
-              instantly recognizable while leaving room for every story to feel
-              fresh.
+              Audiences start to know how Chintu will react before he even does.
+              They know the kind of calm Bubu will bring in after the chaos.
+              That familiarity is part of the brand — not because the characters
+              are perfect, but because they feel like real little personalities.
             </p>
           </div>
 
@@ -198,10 +200,9 @@ function About() {
       >
         <div className="page-container about-cta__panel">
           <div>
-            <h2>Welcome to their little world.</h2>
+            <h2>There&apos;s more to Chintu &amp; Bubu than the reels.</h2>
             <p>
-              Explore Chintu &amp; Bubu, discover their personalities and
-              experience the little moments that make their world special.
+              A little world, a lot of feeling and a story that keeps growing.
             </p>
           </div>
 

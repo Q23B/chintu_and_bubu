@@ -42,11 +42,12 @@ function Contact() {
             LET&apos;S CREATE SOMETHING SPECIAL
           </span>
           <h1 id="contact-title" className="contact-title">
-            Partner With Chintu &amp; Bubu
+            Have something that belongs in their world?
           </h1>
           <p className="contact-intro">
-            For brand collaborations, creative partnerships and business
-            enquiries, we&apos;d love to hear from you.
+            Tell us what you&apos;re thinking. We&apos;ll figure out where
+            Chintu &amp; Bubu fit in and whether the idea belongs inside the
+            story.
           </p>
         </div>
       </section>
@@ -59,17 +60,16 @@ function Contact() {
         <div className="page-container contact-highlights__grid">
           <div className="contact-highlights__text">
             <h2 id="contact-highlights-title">
-              Made for Meaningful Collaborations
+              Built for stories that feel natural.
             </h2>
             <p>
-              Chintu &amp; Bubu brings everyday emotions, playful storytelling
-              and memorable character-led content together to create
-              collaborations that feel natural, engaging and genuinely
-              relatable.
+              Chintu &amp; Bubu operates through familiarity, emotion and
+              character-led storytelling. The best collaborations feel like they
+              were always meant to be there.
             </p>
             <ul className="contact-highlights__list">
               <li>Brand Collaborations</li>
-              <li>Creative Campaigns</li>
+              <li>Campaign Partnerships</li>
               <li>Character-led Storytelling</li>
             </ul>
           </div>
@@ -106,8 +106,8 @@ function Contact() {
               <span className="contact-form__eyebrow">ENQUIRY</span>
               <h2 id="contact-form-title">Send a partnership enquiry</h2>
               <p>
-                Share a few details and we&apos;ll get back to you with a
-                thoughtful response.
+                Share a few details and we&apos;ll work out whether it belongs
+                in the world of Chintu &amp; Bubu.
               </p>
             </div>
 

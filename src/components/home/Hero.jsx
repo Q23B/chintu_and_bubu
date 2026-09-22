@@ -17,16 +17,19 @@ function Hero() {
         <div className="home-hero__content">
           <span className="hero-eyebrow">OFFICIAL CHARACTER WORLD</span>
           <h1 id="home-hero-title" className="hero-title">
-            Chintu & Bubu
+            You know the characters.
+            <br />
+            You just haven&apos;t heard the story behind them.
           </h1>
           <p className="hero-tagline">
-            Little Moments.
+            We didn&apos;t want to be on camera.
             <br />
-            Big Emotions.
+            So we created two characters.
           </p>
           <p className="hero-copy">
-            Welcome to the little world of Chintu & Bubu — where everyday
-            moments become big emotions.
+            What started as a simple idea became a world built around real
+            reactions, everyday misunderstandings, little jokes and the moments
+            people recognize from their own lives.
           </p>
 
           <div className="hero-actions">
@@ -35,7 +38,7 @@ function Hero() {
               className="button button--primary button--pill"
               onClick={() => navigate("/characters")}
             >
-              Explore Their World
+              Meet Chintu &amp; Bubu
             </button>
             <button
               type="button"
@@ -47,7 +50,7 @@ function Hero() {
           </div>
 
           <p className="hero-micro">
-            Original Characters • Everyday Stories • Big Emotions
+            The characters are digital. The moments are real.
           </p>
         </div>
 

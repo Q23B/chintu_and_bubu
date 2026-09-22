@@ -61,11 +61,11 @@ function BrandStory() {
             THE MAGIC OF CHINTU & BUBU
           </span>
           <h2 id="brand-story-title" className="brand-story__title">
-            Why Audiences Fall in Love
+            What started as two characters became a world.
           </h2>
           <p className="brand-story__description">
-            A premium original character world rooted in genuine warmth,
-            relatable everyday moments, and expressive storytelling.
+            Everyday conversations. Little misunderstandings. Honest reactions.
+            A familiar rhythm people recognize immediately.
           </p>
         </div>
 

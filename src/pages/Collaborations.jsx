@@ -39,14 +39,14 @@ function Collaborations() {
           <div className="collaborations-hero__copy">
             <span className="collaborations-eyebrow">COLLABORATIONS</span>
             <h1 id="collaborations-hero-title">
-              Premium partnerships.
+              Can a brand become part of the story
               <br />
-              Thoughtfully designed.
+              without becoming the entire story?
             </h1>
             <p>
-              Chintu &amp; Bubu brings character-led storytelling, elegant
-              visual identity and heartfelt everyday moments to brand
-              collaborations that feel authentic and memorable.
+              We build collaborations around the characters, their personalities
+              and the situations they naturally belong in. The brand should feel
+              part of the world, not interrupt it.
             </p>
             <div className="collaborations-hero__actions">
               <button
@@ -86,7 +86,7 @@ function Collaborations() {
           <div className="collaborations-section-intro">
             <span className="collaborations-eyebrow">PARTNERSHIP TYPES</span>
             <h2 id="collaborations-types-title">
-              Collaboration formats designed for premium storytelling.
+              Different ways to enter their world.
             </h2>
           </div>
 
@@ -122,11 +122,11 @@ function Collaborations() {
           <div className="collaborations-partners__content">
             <span className="collaborations-eyebrow">FEATURED PARTNERS</span>
             <h2 id="collaborations-partners-title">
-              Thoughtful collaborations with premium brands.
+              Stories that belong in the world, not outside it.
             </h2>
             <p>
-              We design partnerships around shared values, visual quality and
-              stories that connect with audiences in a genuine way.
+              Good collaborations feel natural. They sit inside the story
+              instead of interrupting it.
             </p>
           </div>
 
@@ -151,7 +151,7 @@ function Collaborations() {
           <div className="collaborations-section-intro">
             <span className="collaborations-eyebrow">OUR PROCESS</span>
             <h2 id="collaborations-process-title">
-              A collaborative process built for clarity and creative craft.
+              A simple process. A clear story.
             </h2>
           </div>
 
@@ -184,11 +184,11 @@ function Collaborations() {
           <div className="collaborations-benefits__content">
             <span className="collaborations-eyebrow">WHY PARTNER</span>
             <h2 id="collaborations-benefits-title">
-              Create collaborations that feel premium, polished and alive.
+              Because the story feels better when it belongs.
             </h2>
             <p>
-              We shape every partnership around memorable characters, strong
-              visual identity and a polished storytelling experience.
+              Chintu &amp; Bubu work best when the brand feels like part of the
+              world instead of a separate idea dropped into it.
             </p>
           </div>
 
@@ -218,11 +218,10 @@ function Collaborations() {
           </div>
           <div className="collaborations-visual__content">
             <span className="collaborations-eyebrow">VISUAL HIGHLIGHT</span>
-            <h2>Built for storytelling, designed for impact.</h2>
+            <h2>Built for the story. Designed to feel natural.</h2>
             <p>
-              From art direction to visual refinement, every collaboration is
-              constructed to feel emotionally rich, premium and easy to use in
-              launch campaigns.
+              Every collaboration is shaped around character, warmth and a clear
+              sense of place within Chintu &amp; Bubu&apos;s world.
             </p>
           </div>
         </div>
@@ -234,10 +233,10 @@ function Collaborations() {
       >
         <div className="page-container collaborations-cta__panel">
           <div>
-            <h2>Ready to partner with Chintu &amp; Bubu?</h2>
+            <h2>Have something that belongs in their world?</h2>
             <p>
-              Contact us for a thoughtful partnership approach that honors your
-              brand and brings the characters to life.
+              We&apos;re open to ideas that feel natural, thoughtful and true to
+              the story.
             </p>
           </div>
           <div className="collaborations-cta__actions">

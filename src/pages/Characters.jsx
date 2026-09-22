@@ -86,13 +86,14 @@ function Characters() {
           <div className="characters-hero__copy">
             <span className="characters-eyebrow">MEET THE CHARACTERS</span>
             <h1 id="characters-hero-title">
-              Two little personalities.
+              One has a plan.
               <br />
-              One big world.
+              The other usually finds out later.
             </h1>
             <p>
-              Meet Chintu &amp; Bubu — two distinct personalities whose everyday
-              interactions turn little moments into memorable stories.
+              Chintu and Bubu are built from very different instincts, but the
+              same familiar feeling: everyday moments that somehow become a
+              story.
             </p>
           </div>
           <div className="characters-hero__visual" aria-hidden="true">
@@ -136,9 +137,9 @@ function Characters() {
             <span className="characters-eyebrow">THE EXPRESSIVE ONE</span>
             <h2 id="chintu-profile-title">Chintu</h2>
             <p>
-              Chintu brings the drama, mischief and big emotions. Playful,
-              expressive and full of personality, she has a special way of
-              turning even the smallest moment into something memorable.
+              Chintu has the kind of energy that turns a tiny moment into a full
+              scene. Expressive, playful and a little mischievous, he brings the
+              reaction before the rest of the room has caught up.
             </p>
             <div className="characters-tags">
               {[
@@ -176,9 +177,9 @@ function Characters() {
             <span className="characters-eyebrow">THE CALM ONE</span>
             <h2 id="bubu-profile-title">Bubu</h2>
             <p>
-              Bubu is calm, caring and quietly funny — the steady presence
-              behind the chaos. Patient and understanding, he brings warmth and
-              balance to their everyday moments.
+              Bubu is the one who notices the mess, handles the aftermath and
+              somehow keeps it all feeling warm. Calm, caring and quietly funny,
+              he is the steady rhythm behind the chaos.
             </p>
             <div className="characters-tags">
               {["Calm", "Caring", "Patient", "Protective", "Understanding"].map(
@@ -236,12 +237,13 @@ function Characters() {
               Perfectly together.
             </h2>
             <p>
-              Chintu brings the chaos. Bubu brings the calm. Somewhere between
-              the two is where their little world comes alive.
+              Chintu brings the reaction. Bubu brings the balance. It is in that
+              push-and-pull that the world of Chintu &amp; Bubu starts to feel
+              familiar.
             </p>
             <p className="characters-dynamic__discovery" aria-live="polite">
               {togetherUnlocked
-                ? "Chintu + Bubu: together, their differences create the heart of every story."
+                ? "You start recognizing how Chintu will react. You start guessing what Bubu will do next."
                 : ""}
             </p>
           </div>

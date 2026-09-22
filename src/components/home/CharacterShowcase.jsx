@@ -55,11 +55,13 @@ function CharacterShowcase() {
       <div className="character-showcase__intro page-container">
         <span className="character-showcase__eyebrow">MEET THE CHARACTERS</span>
         <h2 id="character-showcase-title" className="character-showcase__title">
-          Two Little Personalities. One Big Bond.
+          One has a plan.
+          <br />
+          The other usually finds out later.
         </h2>
         <p className="character-showcase__text">
-          Meet the two hearts behind the little world of Chintu & Bubu — where
-          every personality, reaction and little moment has a story to tell.
+          Chintu brings the chaos. Bubu brings the calm. Together, they turn
+          ordinary moments into something recognizable, warm and very human.
         </p>
       </div>
 

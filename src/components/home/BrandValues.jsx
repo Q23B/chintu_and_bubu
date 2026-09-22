@@ -72,16 +72,18 @@ function BrandValues() {
             THE WORLD OF CHINTU & BUBU
           </span>
           <h2 id="brand-values-title" className="brand-values__title">
-            Little Things.
-            <span className="brand-values__title--accent">Big Feelings.</span>
+            The characters are digital.
+            <span className="brand-values__title--accent">
+              The moments are real.
+            </span>
           </h2>
           <p className="brand-values__text">
-            At the heart of Chintu & Bubu is a simple idea: the smallest moments
-            can carry the biggest emotions.
+            The world of Chintu & Bubu is built on familiar little things: a
+            quick reaction, a missed cue, a tiny misunderstanding and the laugh
+            that follows.
           </p>
           <p className="brand-values__text brand-values__text--subtle">
-            From playful chaos to quiet little moments, their world celebrates
-            the joy of simply being together.
+            Yeh To Hum Hai. The recognition is part of the story.
           </p>
           <div className="brand-values__decor" aria-hidden="true">
             <span className="brand-values__decor-heart" />

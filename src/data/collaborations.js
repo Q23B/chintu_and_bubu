@@ -1,87 +1,87 @@
 export const collaborationTypes = [
   {
-    title: "Brand Campaigns",
-    label: "STRATEGY",
-    description:
-      "Character-led campaigns, seasonal activations and premium creative work that feels warm, polished and on-brand.",
-  },
-  {
-    title: "Product Licensing",
-    label: "DESIGN",
-    description:
-      "Thoughtful merchandising, brand packaging and co-branded products designed to feel playful yet premium.",
-  },
-  {
-    title: "Content Partnerships",
+    title: "Brand Collaborations",
     label: "STORY",
     description:
-      "Short-form storytelling, social-led content and campaign sequences built around everyday emotion and character connection.",
+      "Stories where the product belongs naturally in the world of Chintu & Bubu.",
+  },
+  {
+    title: "Campaign Partnerships",
+    label: "IDEA",
+    description:
+      "Character-led campaign moments built around a clear idea and a natural fit in the story.",
+  },
+  {
+    title: "Content Collaborations",
+    label: "WORLD",
+    description:
+      "Creative moments shaped around the personalities of Chintu and Bubu rather than interrupting them.",
   },
 ];
 
 export const featuredPartners = [
   {
-    name: "Seasonal Studio",
-    type: "Creative Partner",
+    name: "NoBroker",
+    type: "Brand Collaboration",
     description:
-      "Collaborating on seasonal story moments that feel joyful, polished and emotionally resonant.",
+      "A story-first partnership built around everyday life, routines and the feeling of home.",
   },
   {
-    name: "Heritage Home",
-    type: "Lifestyle Brand",
+    name: "Cloud9 Energy Drink",
+    type: "Campaign Partnership",
     description:
-      "Beautiful product collaborations focused on everyday warmth and premium character styling.",
+      "A playful energy-led story that felt natural to the world of Chintu & Bubu.",
   },
   {
-    name: "Playful Goods",
-    type: "Licensing Partner",
+    name: "Apsara Ice Creams",
+    type: "Content Collaboration",
     description:
-      "Co-created merchandise that highlights Chintu & Bubu’s expressive personalities and emotional charm.",
+      "A warm, joyful moment that fit the character world without taking over the story.",
   },
   {
     name: "Story Circle",
     type: "Content Studio",
     description:
-      "Branded storytelling with heart, crafted for audiences who value meaningful everyday moments.",
+      "For ideas that need a little more character, clarity and emotional rhythm.",
   },
 ];
 
 export const processSteps = [
   {
     step: "01",
-    title: "Collaborative planning",
+    title: "Start with the idea",
     description:
-      "We begin with discovery, creative direction and a shared vision for the collaboration.",
+      "We look at the story, the feeling and the space where the brand could naturally fit.",
   },
   {
     step: "02",
-    title: "Creative refinement",
+    title: "Shape the moment",
     description:
-      "Every visual, narrative and design choice is refined to feel premium and emotionally true.",
+      "The concept is refined around personality, visual tone and the everyday rhythm of Chintu & Bubu.",
   },
   {
     step: "03",
-    title: "Launch support",
+    title: "Bring it into the world",
     description:
-      "We provide polished assets and thoughtful guidance for campaign rollout and audience connection.",
+      "The final result feels considered, human and ready for the audience to recognize and enjoy.",
   },
 ];
 
 export const benefitPoints = [
   {
-    title: "Authentic storytelling",
+    title: "Natural fit",
     description:
-      "Partnerships feel natural, emotionally grounded and built around real character moments.",
+      "The brand feels part of the world instead of dropped into it.",
   },
   {
-    title: "Premium visual quality",
+    title: "Clear character energy",
     description:
-      "Simple, refined design that supports high-end brand placements and quality-driven campaigns.",
+      "Every collaboration has a recognisable tone, rhythm and emotional pull.",
   },
   {
-    title: "Audience affinity",
+    title: "Audience recognition",
     description:
-      "Chintu & Bubu’s world is designed to connect with audiences through warmth, nostalgia and relatability.",
+      "People recognise the world, the feeling and the story before they ever notice the brand detail.",
   },
 ];
 

@@ -7,10 +7,11 @@ function Footer() {
       <div className="site-footer__content page-container">
         <div className="footer-info">
           <div className="footer-brand">Chintu & Bubu</div>
-          <p className="footer-tagline">Little Moments. Big Emotions.</p>
+          <p className="footer-tagline">
+            REAL MOMENTS. DIGITAL CHARACTERS. VISIBLE STORIES.
+          </p>
           <p className="footer-description">
-            An original character world celebrating little moments, emotions and
-            everyday stories.
+            We stay behind the camera. Chintu &amp; Bubu tell the story.
           </p>
         </div>
 

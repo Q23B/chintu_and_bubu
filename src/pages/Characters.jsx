@@ -156,7 +156,7 @@ function Characters() {
             </div>
             <p className="characters-note">
               Chintu has distinctive expressive features and slightly chubby
-              toddler proportions that are central to her identity.
+              toddler proportions that are central to his identity.
             </p>
             <p className="character-profile__discovery" aria-live="polite">
               {selectedCharacter === "chintu"
@@ -274,9 +274,8 @@ function Characters() {
           <span className="characters-eyebrow">CHARACTER IDENTITY</span>
           <h2 id="characters-identity-title">Recognizable in every frame.</h2>
           <p>
-            Chintu &amp; Bubu are built around consistent facial identity,
-            distinct personalities, recognizable proportions and expressive
-            storytelling.
+            You recognize them before they say a word: Chintu&apos;s reaction,
+            Bubu&apos;s calm, and the familiar space between them.
           </p>
 
           <div className="characters-identity__cards">

@@ -82,11 +82,11 @@ function Contact() {
               <div className="contact-card__panel">
                 <span className="contact-card__label">Collaboration</span>
                 <strong className="contact-card__heading">
-                  Premium partnership experience
+                  A good idea belongs in the moment
                 </strong>
                 <p className="contact-card__copy">
-                  Refined, elegant and built for storytelling that connects with
-                  brand audiences.
+                  Bring the idea. We&apos;ll find the place where it feels like
+                  Chintu &amp; Bubu were always part of it.
                 </p>
               </div>
             </div>

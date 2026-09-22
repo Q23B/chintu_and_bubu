@@ -3,9 +3,9 @@ import "../../styles/BrandStory.css";
 
 const brandStoryCards = [
   {
-    title: "Heartfelt Connection",
+    title: "The Feeling of Familiar",
     description:
-      "Chintu and Bubu turn ordinary moments into warm, playful memories through their unique bond and expressive personalities.",
+      "A look, a pause, a joke that lands badly. Chintu and Bubu make the little things feel instantly familiar.",
     accent: "pink",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -17,9 +17,9 @@ const brandStoryCards = [
     ),
   },
   {
-    title: "Everyday Wonder",
+    title: "Small Things, Big Reactions",
     description:
-      "Small everyday experiences become memorable stories — filled with curiosity, laughter, emotion and little surprises.",
+      "The day can be completely ordinary. Then Chintu reacts, Bubu notices, and suddenly it is worth remembering.",
     accent: "blue",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -31,9 +31,9 @@ const brandStoryCards = [
     ),
   },
   {
-    title: "Expressive Character World",
+    title: "A World with Its Own Rhythm",
     description:
-      "Distinct personalities, expressive emotions and carefully crafted visual storytelling make every Chintu & Bubu moment instantly recognizable.",
+      "Chintu brings the feeling out loud. Bubu gives it somewhere to land. That rhythm is what makes them recognizable.",
     accent: "gold",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">

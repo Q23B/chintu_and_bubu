@@ -181,6 +181,11 @@ function About() {
               That familiarity is part of the brand — not because the characters
               are perfect, but because they feel like real little personalities.
             </p>
+            <p>
+              The characters are public. The creators are not. We stay behind
+              the camera so Chintu &amp; Bubu can stay at the center of the
+              story.
+            </p>
           </div>
 
           <div className="about-identity__visual">

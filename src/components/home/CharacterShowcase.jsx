@@ -141,8 +141,8 @@ function CharacterShowcase() {
         aria-live="polite"
       >
         <p>
-          Chintu and Bubu turn ordinary moments into warm, playful memories
-          through their unique bond.
+          Chintu brings the reaction. Bubu brings the look that says he saw it
+          coming. Together, they make ordinary moments feel like theirs.
         </p>
         <button
           type="button"

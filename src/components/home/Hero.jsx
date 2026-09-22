@@ -1,9 +1,18 @@
+import { useNavigate } from "react-router-dom";
+import useRevealOnScroll from "../common/useRevealOnScroll";
 import "../../styles/Home.css";
 import heroImage from "../../assets/characters/characters-hero.webp";
 
 function Hero() {
+  const navigate = useNavigate();
+  const [heroRef, heroRevealed] = useRevealOnScroll();
+
   return (
-    <section className="home-hero" aria-labelledby="home-hero-title">
+    <section
+      ref={heroRef}
+      className={`home-hero interaction-reveal ${heroRevealed ? "is-revealed" : ""}`}
+      aria-labelledby="home-hero-title"
+    >
       <div className="home-hero__panel page-container">
         <div className="home-hero__content">
           <span className="hero-eyebrow">OFFICIAL CHARACTER WORLD</span>
@@ -24,12 +33,14 @@ function Hero() {
             <button
               type="button"
               className="button button--primary button--pill"
+              onClick={() => navigate("/characters")}
             >
               Explore Their World
             </button>
             <button
               type="button"
               className="button button--secondary button--pill hero-button--secondary"
+              onClick={() => navigate("/contact")}
             >
               Partner With Us
             </button>

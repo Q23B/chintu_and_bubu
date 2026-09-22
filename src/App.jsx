@@ -13,7 +13,13 @@ import "./styles/utilities.css";
 
 function App() {
   return (
-    <BrowserRouter basename="/chintu_and_bubu/">
+    <BrowserRouter
+      basename="/chintu_and_bubu/"
+      future={{
+        v7_startTransition: true,
+        v7_relativeSplatPath: true,
+      }}
+    >
       <Header />
       <main>
         <Routes>

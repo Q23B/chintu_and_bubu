@@ -1,3 +1,4 @@
+import useRevealOnScroll from "../common/useRevealOnScroll";
 import "../../styles/BrandStory.css";
 
 const brandStoryCards = [
@@ -46,8 +47,14 @@ const brandStoryCards = [
 ];
 
 function BrandStory() {
+  const [storyRef, storyRevealed] = useRevealOnScroll();
+
   return (
-    <section className="brand-story" aria-labelledby="brand-story-title">
+    <section
+      ref={storyRef}
+      className={`brand-story interaction-reveal ${storyRevealed ? "is-revealed" : ""}`}
+      aria-labelledby="brand-story-title"
+    >
       <div className="brand-story__container page-container">
         <div className="brand-story__intro">
           <span className="brand-story__eyebrow">

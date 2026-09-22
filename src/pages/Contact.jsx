@@ -1,22 +1,49 @@
 import { useState } from "react";
+import useRevealOnScroll from "../components/common/useRevealOnScroll";
 import "../styles/Contact.css";
 
+const collaborationIntents = [
+  { value: "brand", label: "Brand Collaboration" },
+  { value: "campaign", label: "Campaign Partnership" },
+  { value: "content", label: "Content Collaboration" },
+  { value: "other", label: "Other" },
+];
+
 function Contact() {
-  const [submitted, setSubmitted] = useState(false);
+  const [intent, setIntent] = useState("");
+  const [intentError, setIntentError] = useState(false);
+  const [draftReady, setDraftReady] = useState(false);
+  const [heroRef, heroRevealed] = useRevealOnScroll();
+  const [highlightsRef, highlightsRevealed] = useRevealOnScroll();
+  const [formRef, formRevealed] = useRevealOnScroll();
+  const [finalRef, finalRevealed] = useRevealOnScroll();
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setSubmitted(true);
+
+    if (!intent) {
+      setIntentError(true);
+      return;
+    }
+
+    setIntentError(false);
+    setDraftReady(true);
   };
 
   return (
     <div className="contact-page">
-      <section className="contact-hero page-section">
+      <section
+        ref={heroRef}
+        className={`contact-hero page-section interaction-reveal ${heroRevealed ? "is-revealed" : ""}`}
+        aria-labelledby="contact-title"
+      >
         <div className="page-container contact-hero__container">
           <span className="contact-eyebrow">
             LET&apos;S CREATE SOMETHING SPECIAL
           </span>
-          <h1 className="contact-title">Partner With Chintu &amp; Bubu</h1>
+          <h1 id="contact-title" className="contact-title">
+            Partner With Chintu &amp; Bubu
+          </h1>
           <p className="contact-intro">
             For brand collaborations, creative partnerships and business
             enquiries, we&apos;d love to hear from you.
@@ -24,10 +51,16 @@ function Contact() {
         </div>
       </section>
 
-      <section className="contact-highlights page-section">
+      <section
+        ref={highlightsRef}
+        className={`contact-highlights page-section interaction-reveal ${highlightsRevealed ? "is-revealed" : ""}`}
+        aria-labelledby="contact-highlights-title"
+      >
         <div className="page-container contact-highlights__grid">
           <div className="contact-highlights__text">
-            <h2>Made for Meaningful Collaborations</h2>
+            <h2 id="contact-highlights-title">
+              Made for Meaningful Collaborations
+            </h2>
             <p>
               Chintu &amp; Bubu brings everyday emotions, playful storytelling
               and memorable character-led content together to create
@@ -61,19 +94,24 @@ function Contact() {
         </div>
       </section>
 
-      <section className="contact-form-section page-section">
+      <section
+        ref={formRef}
+        id="contact-enquiry"
+        className={`contact-form-section page-section interaction-reveal ${formRevealed ? "is-revealed" : ""}`}
+        aria-labelledby="contact-form-title"
+      >
         <div className="page-container contact-form__container">
           <div className="contact-form__panel">
             <div className="contact-form__header">
               <span className="contact-form__eyebrow">ENQUIRY</span>
-              <h2>Send a partnership enquiry</h2>
+              <h2 id="contact-form-title">Send a partnership enquiry</h2>
               <p>
                 Share a few details and we&apos;ll get back to you with a
                 thoughtful response.
               </p>
             </div>
 
-            <form className="contact-form" onSubmit={handleSubmit} noValidate>
+            <form className="contact-form" onSubmit={handleSubmit}>
               <div className="contact-form__fields">
                 <label className="contact-field">
                   <span>Full Name</span>
@@ -95,16 +133,44 @@ function Contact() {
                   <input type="tel" name="phone" />
                 </label>
 
-                <label className="contact-field">
-                  <span>Collaboration Type</span>
-                  <select name="collaborationType" required>
-                    <option value="">Select an option</option>
-                    <option value="brand">Brand Collaboration</option>
-                    <option value="campaign">Campaign Partnership</option>
-                    <option value="content">Content Collaboration</option>
-                    <option value="other">Other</option>
-                  </select>
-                </label>
+                <fieldset
+                  className={`contact-intent ${intentError ? "is-invalid" : ""}`}
+                  aria-describedby={
+                    intentError ? "contact-intent-error" : undefined
+                  }
+                >
+                  <legend>Collaboration Type</legend>
+                  <div className="contact-intent__options">
+                    {collaborationIntents.map((option) => (
+                      <button
+                        key={option.value}
+                        type="button"
+                        className={`contact-intent__option ${intent === option.value ? "is-selected" : ""}`}
+                        aria-pressed={intent === option.value}
+                        onClick={() => {
+                          setIntent(option.value);
+                          setIntentError(false);
+                          setDraftReady(false);
+                        }}
+                      >
+                        {option.label}
+                      </button>
+                    ))}
+                  </div>
+                  <input
+                    type="hidden"
+                    name="collaborationType"
+                    value={intent}
+                  />
+                  {intentError && (
+                    <span
+                      id="contact-intent-error"
+                      className="contact-intent__error"
+                    >
+                      Select the collaboration type that best fits your idea.
+                    </span>
+                  )}
+                </fieldset>
 
                 <label className="contact-field contact-field--message">
                   <span>Message</span>
@@ -121,9 +187,10 @@ function Contact() {
                 </button>
               </div>
 
-              {submitted && (
-                <p className="contact-form__success">
-                  Thank you — your enquiry has been noted.
+              {draftReady && (
+                <p className="contact-form__notice" role="status">
+                  Your enquiry details are ready. Official contact details are
+                  coming soon.
                 </p>
               )}
             </form>
@@ -136,21 +203,26 @@ function Contact() {
         </div>
       </section>
 
-      <section className="contact-final page-section">
+      <section
+        ref={finalRef}
+        className={`contact-final page-section interaction-reveal ${finalRevealed ? "is-revealed" : ""}`}
+        aria-labelledby="contact-final-title"
+      >
         <div className="page-container contact-final__panel">
           <div>
             <p className="contact-final__eyebrow">
               Have an idea for Chintu &amp; Bubu?
             </p>
-            <h2>Let&apos;s turn a simple idea into a memorable story.</h2>
+            <h2 id="contact-final-title">
+              Let&apos;s turn a simple idea into a memorable story.
+            </h2>
           </div>
-          <button
-            type="button"
+          <a
+            href="#contact-enquiry"
             className="button button--primary button--pill contact-final__button"
-            onClick={() => window.history.pushState(null, "", "/contact")}
           >
             Partner With Us
-          </button>
+          </a>
         </div>
       </section>
     </div>

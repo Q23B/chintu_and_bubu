@@ -53,6 +53,15 @@
   justify-content: center;
 }
 
+.about-hero__image,
+.about-identity__image {
+  width: min(100%, 520px);
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 32px;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.06);
+}
+
 .about-hero__placeholder,
 .about-identity__placeholder {
   width: min(100%, 520px);
@@ -130,6 +139,36 @@
   display: grid;
   gap: 18px;
   min-width: 0;
+  transition:
+    opacity var(--transition-default),
+    transform var(--transition-default),
+    box-shadow var(--transition-fast);
+}
+
+.about-world.interaction-reveal:not(.is-revealed) .about-world__card,
+.about-storytelling.interaction-reveal:not(.is-revealed) .about-principle {
+  opacity: 0;
+  transform: translateY(14px);
+}
+
+.about-world.interaction-reveal.is-revealed .about-world__card,
+.about-storytelling.interaction-reveal.is-revealed .about-principle {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.about-world__card:nth-child(2),
+.about-storytelling .about-principle:nth-child(2) {
+  transition-delay: 70ms;
+}
+
+.about-world__card:nth-child(3),
+.about-storytelling .about-principle:nth-child(3) {
+  transition-delay: 140ms;
+}
+
+.about-world__card:nth-child(4) {
+  transition-delay: 210ms;
 }
 
 .about-world__card h3 {
@@ -187,6 +226,10 @@
   border-radius: 28px;
   padding: 24px;
   box-shadow: 0 18px 32px rgba(0, 0, 0, 0.04);
+  transition:
+    opacity var(--transition-default),
+    transform var(--transition-default),
+    box-shadow var(--transition-fast);
 }
 
 .about-principle__label {
@@ -273,6 +316,30 @@
   min-width: 190px;
 }
 
+.about-cta__actions .button:active {
+  transform: scale(0.98);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-world__card,
+  .about-principle,
+  .about-cta__actions .button:active {
+    transition: none;
+  }
+
+  .about-world.interaction-reveal:not(.is-revealed) .about-world__card,
+  .about-storytelling.interaction-reveal:not(.is-revealed) .about-principle,
+  .about-world.interaction-reveal.is-revealed .about-world__card,
+  .about-storytelling.interaction-reveal.is-revealed .about-principle {
+    opacity: 1;
+    transform: none;
+  }
+
+  .about-cta__actions .button:active {
+    transform: none;
+  }
+}
+
 @media (max-width: 1024px) {
   .about-hero__grid,
   .about-identity__grid,
@@ -309,6 +376,7 @@
 
   .about-cta__panel {
     align-items: stretch;
+    flex-direction: column;
   }
 }
 
@@ -332,9 +400,12 @@
 
   .about-cta__actions {
     flex-direction: column;
+    width: 100%;
+    min-width: 0;
   }
 
   .about-cta__actions .button {
     width: 100%;
+    min-width: 0;
   }
 }

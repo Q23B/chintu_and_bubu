@@ -283,6 +283,74 @@
   line-height: 1.7;
 }
 
+.contact-form__notice {
+  margin: 0;
+  color: var(--color-blue);
+  font-size: 0.98rem;
+  line-height: 1.7;
+}
+
+.contact-intent {
+  display: grid;
+  gap: 12px;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.contact-intent legend {
+  padding: 0;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--color-dark-red);
+}
+
+.contact-intent__options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.contact-intent__option {
+  min-height: 48px;
+  padding: 12px 14px;
+  border: 1px solid rgba(32, 0, 0, 0.16);
+  border-radius: 16px;
+  background: #ffffff;
+  color: var(--color-dark-red);
+  text-align: left;
+  cursor: pointer;
+  transition:
+    transform var(--transition-fast),
+    border-color var(--transition-fast),
+    background-color var(--transition-fast),
+    box-shadow var(--transition-fast),
+    opacity var(--transition-fast);
+}
+
+.contact-intent__option:hover,
+.contact-intent__option.is-selected {
+  border-color: rgba(224, 64, 96, 0.5);
+  background: rgba(224, 64, 96, 0.08);
+  box-shadow: 0 10px 22px rgba(32, 0, 0, 0.06);
+}
+
+.contact-intent__option.is-selected {
+  transform: translateY(-2px);
+  font-weight: 700;
+}
+
+.contact-intent.is-invalid .contact-intent__option {
+  border-color: rgba(224, 64, 96, 0.45);
+}
+
+.contact-intent__error {
+  color: var(--color-dark-pink);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
 .contact-direct-card h3 {
   margin: 0 0 14px;
   font-size: 1.35rem;
@@ -330,6 +398,11 @@
   min-width: 200px;
 }
 
+.contact-final__button:active,
+.contact-form__actions .button:active {
+  transform: scale(0.98);
+}
+
 @media (max-width: 1024px) {
   .contact-highlights__grid,
   .contact-form__container,
@@ -368,6 +441,10 @@
     flex-direction: column;
     align-items: stretch;
   }
+
+  .contact-form__actions .button {
+    width: 100%;
+  }
 }
 
 @media (max-width: 520px) {
@@ -401,5 +478,23 @@
 
   .contact-final__button {
     width: 100%;
+  }
+
+  .contact-intent__options {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-intent__option,
+  .contact-final__button,
+  .contact-form__actions .button {
+    transition: none;
+  }
+
+  .contact-intent__option.is-selected,
+  .contact-final__button:active,
+  .contact-form__actions .button:active {
+    transform: none;
   }
 }

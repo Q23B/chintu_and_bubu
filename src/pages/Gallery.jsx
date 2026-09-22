@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import useRevealOnScroll from "../components/common/useRevealOnScroll";
 import galleryHero from "../assets/gallery/gallery-hero.webp";
 import galleryFeatured from "../assets/gallery/gallery-featured.webp";
 import gallery01 from "../assets/gallery/gallery-01.webp";
@@ -10,6 +11,7 @@ import gallery06 from "../assets/gallery/gallery-06.webp";
 import chintuGallery from "../assets/gallery/chintu-gallery.webp";
 import bubuGallery from "../assets/gallery/bubu-gallery.webp";
 import "../styles/Gallery.css";
+import "../styles/interactions.css";
 
 const galleryCards = [
   {
@@ -17,36 +19,42 @@ const galleryCards = [
     title: "Little Reactions",
     label: "CHARACTER",
     asset: gallery01,
+    alt: "Little Reactions from the Chintu & Bubu visual collection",
   },
   {
     id: "02",
     title: "Everyday Adventures",
     label: "EVERYDAY",
     asset: gallery02,
+    alt: "Everyday Adventures from the Chintu & Bubu visual collection",
   },
   {
     id: "03",
     title: "Playful Moments",
     label: "PLAY",
     asset: gallery03,
+    alt: "Playful Moments from the Chintu & Bubu visual collection",
   },
   {
     id: "04",
     title: "Quiet Togetherness",
     label: "TOGETHER",
     asset: gallery04,
+    alt: "Quiet Togetherness from the Chintu & Bubu visual collection",
   },
   {
     id: "05",
     title: "Big Feelings",
     label: "EMOTION",
     asset: gallery05,
+    alt: "Big Feelings from the Chintu & Bubu visual collection",
   },
   {
     id: "06",
     title: "Just Chintu & Bubu",
     label: "STORY",
     asset: gallery06,
+    alt: "Just Chintu & Bubu from the visual collection",
   },
 ];
 
@@ -67,11 +75,18 @@ const characterMoments = [
 
 function Gallery() {
   const navigate = useNavigate();
+  const [heroRef, heroRevealed] = useRevealOnScroll();
+  const [featuredRef, featuredRevealed] = useRevealOnScroll();
+  const [collectionRef, collectionRevealed] = useRevealOnScroll();
+  const [momentsRef, momentsRevealed] = useRevealOnScroll();
+  const [storyRef, storyRevealed] = useRevealOnScroll();
+  const [ctaRef, ctaRevealed] = useRevealOnScroll();
 
   return (
     <div className="gallery-page">
       <section
-        className="gallery-hero page-section"
+        ref={heroRef}
+        className={`gallery-hero page-section interaction-reveal ${heroRevealed ? "is-revealed" : ""}`}
         aria-labelledby="gallery-hero-title"
       >
         <div className="page-container gallery-hero__grid">
@@ -87,10 +102,10 @@ function Gallery() {
               characters, everyday moments and little stories brought to life.
             </p>
           </div>
-          <div className="gallery-hero__visual" aria-hidden="true">
+          <div className="gallery-hero__visual">
             <img
               src={galleryHero}
-              alt=""
+              alt="Chintu & Bubu visual world in frames"
               className="gallery-hero__image"
               loading="eager"
             />
@@ -99,14 +114,15 @@ function Gallery() {
       </section>
 
       <section
-        className="gallery-featured page-section"
+        ref={featuredRef}
+        className={`gallery-featured page-section interaction-reveal ${featuredRevealed ? "is-revealed" : ""}`}
         aria-labelledby="gallery-featured-title"
       >
         <div className="page-container gallery-featured__grid">
-          <div className="gallery-featured__visual" aria-hidden="true">
+          <div className="gallery-featured__visual">
             <img
               src={galleryFeatured}
-              alt=""
+              alt="Featured Chintu & Bubu everyday moment"
               className="gallery-featured__image"
               loading="eager"
             />
@@ -126,7 +142,8 @@ function Gallery() {
       </section>
 
       <section
-        className="gallery-collection page-section"
+        ref={collectionRef}
+        className={`gallery-collection page-section interaction-reveal ${collectionRevealed ? "is-revealed" : ""}`}
         aria-labelledby="gallery-collection-title"
       >
         <div className="page-container">
@@ -143,7 +160,7 @@ function Gallery() {
                 <div className="gallery-card__image" aria-hidden="true">
                   <img
                     src={card.asset}
-                    alt=""
+                    alt={card.alt}
                     className="gallery-card__image-element"
                     loading="lazy"
                   />
@@ -161,7 +178,8 @@ function Gallery() {
       </section>
 
       <section
-        className="gallery-moments page-section"
+        ref={momentsRef}
+        className={`gallery-moments page-section interaction-reveal ${momentsRevealed ? "is-revealed" : ""}`}
         aria-labelledby="gallery-moments-title"
       >
         <div className="page-container gallery-moments__wrapper">
@@ -181,7 +199,7 @@ function Gallery() {
           <div className="gallery-moments__cards">
             {characterMoments.map((item) => (
               <article key={item.title} className="gallery-moments__card">
-                <div className="gallery-moments__visual" aria-hidden="true">
+                <div className="gallery-moments__visual">
                   <img
                     src={item.asset}
                     alt={item.alt}
@@ -200,7 +218,8 @@ function Gallery() {
       </section>
 
       <section
-        className="gallery-story page-section"
+        ref={storyRef}
+        className={`gallery-story page-section interaction-reveal ${storyRevealed ? "is-revealed" : ""}`}
         aria-labelledby="gallery-story-title"
       >
         <div className="page-container gallery-story__panel">
@@ -213,7 +232,10 @@ function Gallery() {
         </div>
       </section>
 
-      <section className="gallery-cta page-section">
+      <section
+        ref={ctaRef}
+        className={`gallery-cta page-section interaction-reveal ${ctaRevealed ? "is-revealed" : ""}`}
+      >
         <div className="page-container gallery-cta__panel">
           <div>
             <h2>More little moments are waiting.</h2>

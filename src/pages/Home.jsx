@@ -2,6 +2,7 @@ import Hero from "../components/home/Hero";
 import BrandStory from "../components/home/BrandStory";
 import CharacterShowcase from "../components/home/CharacterShowcase";
 import BrandValues from "../components/home/BrandValues";
+import "../styles/interactions.css";
 
 function Home() {
   return (

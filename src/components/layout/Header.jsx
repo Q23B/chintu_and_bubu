@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { siteNavItems } from "./nav-data";
 import "../../styles/Header.css";
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
@@ -61,6 +62,7 @@ function Header() {
             <button
               type="button"
               className="button button--primary button--pill"
+              onClick={() => navigate("/contact")}
             >
               Partner With Us
             </button>
@@ -68,7 +70,11 @@ function Header() {
         </nav>
 
         <div className="site-header__actions site-header__actions--desktop">
-          <button type="button" className="button button--primary button--pill">
+          <button
+            type="button"
+            className="button button--primary button--pill"
+            onClick={() => navigate("/contact")}
+          >
             Partner With Us
           </button>
         </div>

@@ -69,6 +69,34 @@
   color: rgba(32, 0, 0, 0.82);
 }
 
+.gallery-hero__image,
+.gallery-featured__image,
+.gallery-card__image-element,
+.gallery-moments__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 28px;
+}
+
+.gallery-hero__image,
+.gallery-featured__image {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.gallery-card__image-element {
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+  background: #f8f7f5;
+}
+
+.gallery-moments__image {
+  aspect-ratio: 3 / 4;
+  object-fit: contain;
+  background: #f8f7f5;
+}
+
 .gallery-placeholder {
   width: min(100%, 520px);
   aspect-ratio: 4 / 3;
@@ -283,6 +311,12 @@
 
   .gallery-cta__actions .button {
     width: 100%;
+  }
+
+  .gallery-cta__panel {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
   }
 }
 

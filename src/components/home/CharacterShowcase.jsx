@@ -1,3 +1,6 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import useRevealOnScroll from "../common/useRevealOnScroll";
 import "../../styles/CharacterShowcase.css";
 import chintuCharacter from "../../assets/characters/chintu-character.webp";
 import bubuCharacter from "../../assets/characters/bubu-character.webp";
@@ -28,9 +31,25 @@ const characters = [
 ];
 
 function CharacterShowcase() {
+  const navigate = useNavigate();
+  const [selectedCharacter, setSelectedCharacter] = useState(null);
+  const [discoveredCharacters, setDiscoveredCharacters] = useState(
+    () => new Set(),
+  );
+  const [showcaseRef, showcaseRevealed] = useRevealOnScroll();
+  const togetherUnlocked = discoveredCharacters.size === 2;
+
+  function selectCharacter(character) {
+    const nextDiscovered = new Set(discoveredCharacters);
+    nextDiscovered.add(character);
+    setDiscoveredCharacters(nextDiscovered);
+    setSelectedCharacter(character);
+  }
+
   return (
     <section
-      className="character-showcase"
+      ref={showcaseRef}
+      className={`character-showcase interaction-reveal ${showcaseRevealed ? "is-revealed" : ""}`}
       aria-labelledby="character-showcase-title"
     >
       <div className="character-showcase__intro page-container">
@@ -46,10 +65,22 @@ function CharacterShowcase() {
 
       <div className="character-showcase__cards page-container">
         {characters.map((character) => (
-          <article key={character.id} className="character-showcase__card">
+          <article
+            key={character.id}
+            className={`character-showcase__card character-showcase__card--${character.accent} ${selectedCharacter === character.id ? "is-selected" : ""} ${selectedCharacter && selectedCharacter !== character.id ? "is-secondary" : ""} ${togetherUnlocked ? "is-paired" : ""}`}
+          >
             <div
               className={`character-showcase__frame character-showcase__frame--${character.accent}`}
             >
+              <button
+                type="button"
+                className="character-showcase__select"
+                aria-label={`Explore ${character.name}'s personality`}
+                aria-pressed={selectedCharacter === character.id}
+                onClick={() => selectCharacter(character.id)}
+              >
+                <span>Explore {character.name}</span>
+              </button>
               {character.image ? (
                 <img
                   src={character.image}
@@ -93,9 +124,31 @@ function CharacterShowcase() {
                   ))}
                 </div>
               </div>
+              <p className="character-showcase__discovery" aria-live="polite">
+                {selectedCharacter === character.id
+                  ? `${character.name} is ${character.label.toLowerCase()}.`
+                  : ""}
+              </p>
             </div>
           </article>
         ))}
+      </div>
+
+      <div
+        className={`character-showcase__shared ${togetherUnlocked ? "is-visible" : ""}`}
+        aria-live="polite"
+      >
+        <p>
+          Chintu and Bubu turn ordinary moments into warm, playful memories
+          through their unique bond.
+        </p>
+        <button
+          type="button"
+          className="button button--secondary button--pill"
+          onClick={() => navigate("/characters")}
+        >
+          Meet Them More Closely
+        </button>
       </div>
     </section>
   );

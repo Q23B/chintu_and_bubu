@@ -1,19 +1,25 @@
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import charactersHero from "../assets/characters/characters-hero.webp";
 import chintuProfile from "../assets/characters/chintu-profile.webp";
 import bubuProfile from "../assets/characters/bubu-profile.webp";
+import useRevealOnScroll from "../components/common/useRevealOnScroll";
 import "../styles/Characters.css";
+import "../styles/interactions.css";
 
 const worldCards = [
   {
+    key: "chaos",
     title: "CHAOS",
     description: "Chintu's playful energy keeps every moment unpredictable.",
   },
   {
+    key: "calm",
     title: "CALM",
     description: "Bubu brings patience, warmth and quiet understanding.",
   },
   {
+    key: "connection",
     title: "CONNECTION",
     description: "Together, their differences create the heart of every story.",
   },
@@ -43,11 +49,37 @@ const identityPrinciples = [
 
 function Characters() {
   const navigate = useNavigate();
+  const [selectedCharacter, setSelectedCharacter] = useState(null);
+  const [discoveredCharacters, setDiscoveredCharacters] = useState(
+    () => new Set(),
+  );
+  const [activeDynamic, setActiveDynamic] = useState(null);
+  const [heroRef, heroRevealed] = useRevealOnScroll();
+  const [chintuRef, chintuRevealed] = useRevealOnScroll();
+  const [bubuRef, bubuRevealed] = useRevealOnScroll();
+  const [dynamicRef, dynamicRevealed] = useRevealOnScroll();
+  const [identityRef, identityRevealed] = useRevealOnScroll();
+  const [ctaRef, ctaRevealed] = useRevealOnScroll();
+
+  const togetherUnlocked = discoveredCharacters.size === 2;
+
+  function selectCharacter(character) {
+    const nextDiscovered = new Set(discoveredCharacters);
+    nextDiscovered.add(character);
+    setDiscoveredCharacters(nextDiscovered);
+    setSelectedCharacter(character);
+    setActiveDynamic(nextDiscovered.size === 2 ? "connection" : character);
+  }
+
+  function selectDynamic(key) {
+    setActiveDynamic(key);
+  }
 
   return (
     <div className="characters-page">
       <section
-        className="characters-hero page-section"
+        ref={heroRef}
+        className={`characters-hero page-section interaction-reveal ${heroRevealed ? "is-revealed" : ""}`}
         aria-labelledby="characters-hero-title"
       >
         <div className="page-container characters-hero__grid">
@@ -75,17 +107,29 @@ function Characters() {
       </section>
 
       <section
-        className="character-profile page-section"
+        ref={chintuRef}
+        className={`character-profile page-section interaction-reveal ${chintuRevealed ? "is-revealed" : ""} ${selectedCharacter === "chintu" ? "is-selected" : ""} ${selectedCharacter === "bubu" ? "is-secondary" : ""}`}
         aria-labelledby="chintu-profile-title"
       >
         <div className="page-container character-profile__grid">
-          <div className="character-profile__visual" aria-hidden="true">
-            <img
-              src={chintuProfile}
-              alt=""
-              className="character-profile__image"
-              loading="eager"
-            />
+          <div className="character-profile__visual">
+            <button
+              type="button"
+              className="character-profile__select"
+              aria-label="Explore Chintu's personality"
+              aria-pressed={selectedCharacter === "chintu"}
+              onClick={() => selectCharacter("chintu")}
+            >
+              <img
+                src={chintuProfile}
+                alt=""
+                className="character-profile__image"
+                loading="eager"
+              />
+              <span className="character-profile__select-label">
+                Explore Chintu
+              </span>
+            </button>
           </div>
 
           <div className="character-profile__content">
@@ -113,12 +157,18 @@ function Characters() {
               Chintu has distinctive expressive features and slightly chubby
               toddler proportions that are central to her identity.
             </p>
+            <p className="character-profile__discovery" aria-live="polite">
+              {selectedCharacter === "chintu"
+                ? "Dramatic, playful, mischievous, emotional and expressive."
+                : ""}
+            </p>
           </div>
         </div>
       </section>
 
       <section
-        className="character-profile page-section"
+        ref={bubuRef}
+        className={`character-profile page-section interaction-reveal ${bubuRevealed ? "is-revealed" : ""} ${selectedCharacter === "bubu" ? "is-selected" : ""} ${selectedCharacter === "chintu" ? "is-secondary" : ""}`}
         aria-labelledby="bubu-profile-title"
       >
         <div className="page-container character-profile__grid character-profile__grid--reverse">
@@ -143,21 +193,38 @@ function Characters() {
               Bubu has a slightly taller toddler proportion than Chintu,
               creating their recognizable height relationship.
             </p>
+            <p className="character-profile__discovery" aria-live="polite">
+              {selectedCharacter === "bubu"
+                ? "Calm, caring, patient, protective and understanding."
+                : ""}
+            </p>
           </div>
 
-          <div className="character-profile__visual" aria-hidden="true">
-            <img
-              src={bubuProfile}
-              alt=""
-              className="character-profile__image"
-              loading="eager"
-            />
+          <div className="character-profile__visual">
+            <button
+              type="button"
+              className="character-profile__select"
+              aria-label="Explore Bubu's personality"
+              aria-pressed={selectedCharacter === "bubu"}
+              onClick={() => selectCharacter("bubu")}
+            >
+              <img
+                src={bubuProfile}
+                alt=""
+                className="character-profile__image"
+                loading="eager"
+              />
+              <span className="character-profile__select-label">
+                Explore Bubu
+              </span>
+            </button>
           </div>
         </div>
       </section>
 
       <section
-        className="characters-dynamic page-section"
+        ref={dynamicRef}
+        className={`characters-dynamic page-section interaction-reveal ${dynamicRevealed ? "is-revealed" : ""} ${togetherUnlocked ? "is-together-unlocked" : ""}`}
         aria-labelledby="characters-dynamic-title"
       >
         <div className="page-container characters-dynamic__wrapper">
@@ -172,21 +239,33 @@ function Characters() {
               Chintu brings the chaos. Bubu brings the calm. Somewhere between
               the two is where their little world comes alive.
             </p>
+            <p className="characters-dynamic__discovery" aria-live="polite">
+              {togetherUnlocked
+                ? "Chintu + Bubu: together, their differences create the heart of every story."
+                : ""}
+            </p>
           </div>
 
           <div className="characters-dynamic__cards">
             {worldCards.map((card) => (
-              <article key={card.title} className="characters-dynamic__card">
+              <button
+                key={card.title}
+                type="button"
+                className={`characters-dynamic__card ${activeDynamic === card.key ? "is-selected" : ""}`}
+                aria-pressed={activeDynamic === card.key}
+                onClick={() => selectDynamic(card.key)}
+              >
                 <span className="characters-dynamic__label">{card.title}</span>
                 <p>{card.description}</p>
-              </article>
+              </button>
             ))}
           </div>
         </div>
       </section>
 
       <section
-        className="characters-identity page-section"
+        ref={identityRef}
+        className={`characters-identity page-section interaction-reveal ${identityRevealed ? "is-revealed" : ""}`}
         aria-labelledby="characters-identity-title"
       >
         <div className="page-container characters-identity__wrapper">
@@ -209,7 +288,10 @@ function Characters() {
         </div>
       </section>
 
-      <section className="characters-cta page-section">
+      <section
+        ref={ctaRef}
+        className={`characters-cta page-section interaction-reveal ${ctaRevealed ? "is-revealed" : ""}`}
+      >
         <div className="page-container characters-cta__panel">
           <div>
             <h2>Every little moment has a story.</h2>

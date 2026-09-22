@@ -1,4 +1,6 @@
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import useRevealOnScroll from "../components/common/useRevealOnScroll";
 import collaborationsHero from "../assets/collaborations/collaborations-hero.webp";
 import collaborationsHighlight from "../assets/collaborations/collaborations-highlight.webp";
 import {
@@ -8,14 +10,29 @@ import {
   benefitPoints,
 } from "../data/collaborations";
 import "../styles/Collaborations.css";
+import "../styles/interactions.css";
 
 function Collaborations() {
   const navigate = useNavigate();
+  const [selectedType, setSelectedType] = useState(null);
+  const [activeProcess, setActiveProcess] = useState(processSteps[0].step);
+  const [heroRef, heroRevealed] = useRevealOnScroll();
+  const [typesRef, typesRevealed] = useRevealOnScroll();
+  const [partnersRef, partnersRevealed] = useRevealOnScroll();
+  const [processRef, processRevealed] = useRevealOnScroll();
+  const [benefitsRef, benefitsRevealed] = useRevealOnScroll();
+  const [visualRef, visualRevealed] = useRevealOnScroll();
+  const [ctaRef, ctaRevealed] = useRevealOnScroll();
+
+  const selectedTypeDetails = collaborationTypes.find(
+    (item) => item.title === selectedType,
+  );
 
   return (
     <div className="collaborations-page">
       <section
-        className="collaborations-hero page-section"
+        ref={heroRef}
+        className={`collaborations-hero page-section interaction-reveal ${heroRevealed ? "is-revealed" : ""}`}
         aria-labelledby="collaborations-hero-title"
       >
         <div className="page-container collaborations-hero__grid">
@@ -49,10 +66,10 @@ function Collaborations() {
             </div>
           </div>
 
-          <div className="collaborations-hero__visual" aria-hidden="true">
+          <div className="collaborations-hero__visual">
             <img
               src={collaborationsHero}
-              alt=""
+              alt="Chintu & Bubu collaboration world"
               className="collaborations-hero__image"
               loading="eager"
             />
@@ -61,7 +78,8 @@ function Collaborations() {
       </section>
 
       <section
-        className="collaborations-types page-section"
+        ref={typesRef}
+        className={`collaborations-types page-section interaction-reveal ${typesRevealed ? "is-revealed" : ""}`}
         aria-labelledby="collaborations-types-title"
       >
         <div className="page-container collaborations-types__wrapper">
@@ -74,18 +92,30 @@ function Collaborations() {
 
           <div className="collaborations-types__grid">
             {collaborationTypes.map((item) => (
-              <article key={item.title} className="collaboration-card">
+              <button
+                key={item.title}
+                type="button"
+                className={`collaboration-card ${selectedType === item.title ? "is-selected" : ""} ${selectedType && selectedType !== item.title ? "is-secondary" : ""}`}
+                aria-pressed={selectedType === item.title}
+                onClick={() => setSelectedType(item.title)}
+              >
                 <span className="collaboration-card__label">{item.label}</span>
                 <h3>{item.title}</h3>
                 <p>{item.description}</p>
-              </article>
+              </button>
             ))}
           </div>
+          <p className="collaborations-types__selected" aria-live="polite">
+            {selectedTypeDetails
+              ? `${selectedTypeDetails.title}: ${selectedTypeDetails.description}`
+              : ""}
+          </p>
         </div>
       </section>
 
       <section
-        className="collaborations-partners page-section"
+        ref={partnersRef}
+        className={`collaborations-partners page-section interaction-reveal ${partnersRevealed ? "is-revealed" : ""}`}
         aria-labelledby="collaborations-partners-title"
       >
         <div className="page-container collaborations-partners__grid">
@@ -113,7 +143,8 @@ function Collaborations() {
       </section>
 
       <section
-        className="collaborations-process page-section"
+        ref={processRef}
+        className={`collaborations-process page-section interaction-reveal ${processRevealed ? "is-revealed" : ""}`}
         aria-labelledby="collaborations-process-title"
       >
         <div className="page-container collaborations-process__wrapper">
@@ -126,20 +157,27 @@ function Collaborations() {
 
           <div className="collaborations-process__steps">
             {processSteps.map((step) => (
-              <article key={step.step} className="process-step">
+              <button
+                key={step.step}
+                type="button"
+                className={`process-step ${activeProcess === step.step ? "is-active" : ""}`}
+                aria-pressed={activeProcess === step.step}
+                onClick={() => setActiveProcess(step.step)}
+              >
                 <div className="process-step__number">{step.step}</div>
                 <div>
                   <h3>{step.title}</h3>
                   <p>{step.description}</p>
                 </div>
-              </article>
+              </button>
             ))}
           </div>
         </div>
       </section>
 
       <section
-        className="collaborations-benefits page-section"
+        ref={benefitsRef}
+        className={`collaborations-benefits page-section interaction-reveal ${benefitsRevealed ? "is-revealed" : ""}`}
         aria-labelledby="collaborations-benefits-title"
       >
         <div className="page-container collaborations-benefits__wrapper">
@@ -165,12 +203,15 @@ function Collaborations() {
         </div>
       </section>
 
-      <section className="collaborations-visual page-section">
+      <section
+        ref={visualRef}
+        className={`collaborations-visual page-section interaction-reveal ${visualRevealed ? "is-revealed" : ""}`}
+      >
         <div className="page-container collaborations-visual__panel">
-          <div className="collaborations-visual__image" aria-hidden="true">
+          <div className="collaborations-visual__image">
             <img
               src={collaborationsHighlight}
-              alt=""
+              alt="Chintu & Bubu collaboration highlight artwork"
               className="collaborations-visual__image-element"
               loading="eager"
             />
@@ -187,7 +228,10 @@ function Collaborations() {
         </div>
       </section>
 
-      <section className="collaborations-cta page-section">
+      <section
+        ref={ctaRef}
+        className={`collaborations-cta page-section interaction-reveal ${ctaRevealed ? "is-revealed" : ""}`}
+      >
         <div className="page-container collaborations-cta__panel">
           <div>
             <h2>Ready to partner with Chintu &amp; Bubu?</h2>

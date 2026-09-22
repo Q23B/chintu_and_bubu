@@ -1,3 +1,4 @@
+import useRevealOnScroll from "../common/useRevealOnScroll";
 import "../../styles/BrandValues.css";
 
 const values = [
@@ -57,8 +58,14 @@ const values = [
 ];
 
 function BrandValues() {
+  const [valuesRef, valuesRevealed] = useRevealOnScroll();
+
   return (
-    <section className="brand-values" aria-labelledby="brand-values-title">
+    <section
+      ref={valuesRef}
+      className={`brand-values interaction-reveal ${valuesRevealed ? "is-revealed" : ""}`}
+      aria-labelledby="brand-values-title"
+    >
       <div className="brand-values__wrapper page-container">
         <div className="brand-values__intro">
           <span className="brand-values__eyebrow">

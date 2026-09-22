@@ -1,4 +1,7 @@
 :root {
+  --font-sans: "Manrope", "Segoe UI", sans-serif;
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+
   --color-light-gray: #e0e0e0;
   --color-blue: #2060a0;
   --color-dark-pink: #e04060;
